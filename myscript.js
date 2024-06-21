@@ -1,6 +1,9 @@
 let randomNumber = Math.floor(Math.random() * 3);
 console.log(randomNumber);
 
+let humanScore = 0;
+let computerScore = 0;
+
     function getComputerChoice() {
 
         if(randomNumber === 0) {
@@ -29,4 +32,22 @@ let userOption = prompt("Choose: Rock, Paper or Scissors");
             return alert('Invalid choice, please try again');
         }
     }
-    console.log(getHumanChoice());
+
+    let humanChoice = userOption;
+    console.log(humanChoice);
+    let computerChoice = getComputerChoice();
+    console.log(computerChoice);
+
+    function playRound (humanChoice, computerChoice) {
+
+        if('Rock' == 'Rock') {
+            return alert('You Win!');
+        } else {
+            return alert('You lose!');
+        }
+    }
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
