@@ -1,11 +1,10 @@
-let randomNumber = Math.floor(Math.random() * 3);
-// console.log(randomNumber);
 
 let humanScore = 0;
 let computerScore = 0;
 
-
     function getComputerChoice() {
+
+        let randomNumber = Math.floor(Math.random() * 3);
 
         if(randomNumber === 0) {
             return 'Rock';
@@ -15,16 +14,13 @@ let computerScore = 0;
             return 'Scissors';
         }
     }
-    // console.log(getComputerChoice());
 
-
-
-let userOption = prompt("Choose: Rock, Paper or Scissors");
-
-userOption = userOption.toLowerCase();
-// console.log(userOption);
 
     function getHumanChoice() {
+
+        let userOption = prompt("Choose: Rock, Paper or Scissors");
+
+        userOption = userOption.toLowerCase();
 
         if(userOption === 'rock') {
             return 'Rock';
@@ -37,18 +33,11 @@ userOption = userOption.toLowerCase();
         }
     }
 
-    let humanChoice = userOption;
-    // console.log(humanChoice);
 
-    let computerChoice = getComputerChoice();
-    // console.log(computerChoice);
-
-
-
-    function playRound (humanChoice, computerChoice) {
+    function playRound(humanChoice, computerChoice) {
 
         if(humanChoice === computerChoice) {
-            return alert('Draw!');
+            return 'Draw!';
         }
         
         if(humanChoice === 'Rock') {
@@ -85,12 +74,18 @@ userOption = userOption.toLowerCase();
         }
     }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
-    //let updateHumanScore = humanScore;
-    //let updateComputerScore = computerScore;
+    function playGame() {
+         
+        for (let i = 0; i < 5; i++) {
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
 
-    console.log(playRound(humanSelection, computerSelection));
-    console.log(humanScore);
-    console.log(computerScore);
+            const currentRound = playRound(humanSelection, computerSelection);
+            console.log(currentRound);
+            console.log('Player score:' + '' + humanScore);
+            console.log('Computer score:' + '' + computerScore);
+        }
+    }
+
+playGame();
